@@ -1,7 +1,7 @@
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class WalletTest {
     @Test
@@ -21,11 +21,10 @@ public class WalletTest {
         String prefferedCurrency="Rs";
         double dollar=1;
         double rupees=50;
-        double actual=124.85;
+        double expected=124.85;
         Wallet wallet = new Wallet(rupees,dollar,prefferedCurrency);
 
-        double expected=wallet.balanceInPrefferedCurrency();
-
+        double actual=wallet.balanceInPrefferedCurrency();
         assertEquals(expected,actual);
 
     }
@@ -43,8 +42,21 @@ public class WalletTest {
         double actual=wallet.balanceInPrefferedCurrency();
 
         assertEquals(expected,actual);
-
-
     }
 
+    @Test
+    void shouldCreditMoneyInWallet() {
+        double dollar=1;
+        double rupees=74.85;
+        double creditRupees=149.7;
+        double creditDollar=4;
+        double expectedRupees=rupees+creditRupees;
+        double expectedDollar=5;
+        Wallet wallet = new Wallet(rupees,dollar);
+
+        wallet.creditCurrency(creditRupees,creditDollar);
+
+        assertAll(()->assertEquals(expectedRupees,wallet.getRupees()),
+                ()-> assertEquals(expectedDollar,wallet.getDollar()));
+    }
 }
