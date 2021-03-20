@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="WalletTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2021-03-20T08:53:14" hostname="Valans-MacBook-Pro.local" time="0.015">
+<testsuite name="WalletTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-03-20T09:10:19" hostname="Valans-MacBook-Pro.local" time="0.017">
   <properties/>
-  <testcase name="ReturnWalletBalanceInRupeesAsPreferredCurrency()" classname="WalletTest" time="0.013"/>
-  <testcase name="ReturnTrueIfOneDollarIsEqualToItsInrEquivalent()" classname="WalletTest" time="0.001"/>
+  <testcase name="shouldReturnWalletBalanceInRupeesAsPreferredCurrency()" classname="WalletTest" time="0.014"/>
+  <testcase name="shouldReturnTrueIfOneDollarIsEqualToItsInrEquivalent()" classname="WalletTest" time="0.001"/>
+  <testcase name="shouldReturnWalletBalanceInDollarAsPreferredCurrency()" classname="WalletTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

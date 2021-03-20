@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class WalletTest {
     @Test
-    void ReturnTrueIfOneDollarIsEqualToItsInrEquivalent() {
+    void shouldReturnTrueIfOneDollarIsEqualToItsInrEquivalent() {
         double dollar=1;
         double rupees=74.85;
         Wallet wallet = new Wallet(rupees,dollar);
@@ -17,8 +17,8 @@ public class WalletTest {
     }
 
     @Test
-    void ReturnWalletBalanceInRupeesAsPreferredCurrency() {
-       String prefferedCurrency="Rs";
+    void shouldReturnWalletBalanceInRupeesAsPreferredCurrency() {
+        String prefferedCurrency="Rs";
         double dollar=1;
         double rupees=50;
         double actual=124.85;
@@ -29,4 +29,22 @@ public class WalletTest {
         assertEquals(expected,actual);
 
     }
+
+    @Test
+    void shouldReturnWalletBalanceInDollarAsPreferredCurrency() {
+        String prefferedCurrency="$";
+        double dollar=1;
+        double rupees1=74.85;
+        double rupees2=149.7;
+        double rupees=rupees1+rupees2;
+        double expected=4;
+        Wallet wallet = new Wallet(rupees,dollar,prefferedCurrency);
+
+        double actual=wallet.balanceInPrefferedCurrency();
+
+        assertEquals(expected,actual);
+
+
+    }
+
 }

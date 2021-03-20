@@ -21,8 +21,8 @@ public class Wallet {
     public double convertDollarToRupees(){
         return dollar*onedollarequivalentinrupees;
     }
-    public int convertRupeesToDollar(){
-        return (int) ((int) rupees/onedollarequivalentinrupees);
+    public double convertRupeesToDollar(){
+        return rupees/onedollarequivalentinrupees;
     }
 
     public double balanceInPrefferedCurrency() {
@@ -31,8 +31,8 @@ public class Wallet {
             return sum;
         }
         else{
-            int sum= (int) (dollar+convertRupeesToDollar());
-            return sum;
+            double sum=dollar+convertRupeesToDollar();
+            return (int) sum;
         }
 
     }
