@@ -1,3 +1,5 @@
+import java.lang.reflect.UndeclaredThrowableException;
+
 public class Wallet {
     private double dollar;
     private double rupees;
@@ -45,5 +47,10 @@ public class Wallet {
 
     public int getDollar() {
         return (int) dollar;
+    }
+
+    public void debitCurrency(double debitRupees, double debitDollar) {
+        rupees-=debitRupees;
+        dollar-=debitDollar;
     }
 }

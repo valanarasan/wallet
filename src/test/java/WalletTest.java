@@ -59,4 +59,21 @@ public class WalletTest {
         assertAll(()->assertEquals(expectedRupees,wallet.getRupees()),
                 ()-> assertEquals(expectedDollar,wallet.getDollar()));
     }
+
+    @Test
+    void shouldDebitMoneyFromWallet() {
+        double dollar=5;
+        double rupees=149.7;
+        double debitRupees=74.85;
+        double debitDollar=4;
+        double expectedRupees=74.85;
+        double expectedDollar=1;
+        Wallet wallet = new Wallet(rupees,dollar);
+
+        wallet.debitCurrency(debitRupees,debitDollar);
+
+        assertAll(()->assertEquals(expectedRupees,wallet.getRupees()),
+                ()-> assertEquals(expectedDollar,wallet.getDollar()));
+
+    }
 }
